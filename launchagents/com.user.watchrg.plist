@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Label</key>
+	<string>com.user.watchrg</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/bin/bash</string>
+		<string>/Users/liu/.local/bin/cursor-rg-watcher.sh</string>
+	</array>
+	<key>RunAtLoad</key>
+	<true/>
+	<key>WatchPaths</key>
+	<array>
+		<string>/Applications/Cursor.app/Contents/Resources/app/node_modules/@vscode/ripgrep/bin</string>
+	</array>
+	<key>StartInterval</key>
+	<integer>10</integer>
+	<key>StandardOutPath</key>
+	<string>/Users/liu/Library/Logs/watchrg.log</string>
+	<key>StandardErrorPath</key>
+	<string>/Users/liu/Library/Logs/watchrg.err</string>
+</dict>
+</plist>

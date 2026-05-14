@@ -1,0 +1,33 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+
+# Editor and IDE state
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Logs and runtime state
+*.log
+*.err
+*.pid
+*.tmp
+tmp/
+temp/
+.cache/
+
+# Shell and test artifacts
+*.bak
+*.orig
+*.rej
+coverage/
+
+# Local installs and generated launchd files
+.local/
+dist/
+build/
