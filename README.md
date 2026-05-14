@@ -18,6 +18,8 @@ When that file appears, the watcher moves it to the user's Trash instead of dele
 - Directories are refused and never recursively removed.
 - The file is moved to `~/.Trash`, not removed with `rm`.
 - A newly downloaded or upgraded `Cursor.app` build is skipped until Cursor has successfully launched.
+- A `Cursor.app` bundle that was modified recently is treated as installing and skipped temporarily.
+- After first launch, a verification grace period is observed before moving anything from the app bundle.
 - Actions that move, skip, fail, pause, or resume send a macOS notification.
 - Logs are written to `~/rg_deleted.log`.
 
@@ -71,6 +73,10 @@ After Cursor upgrades and opens successfully:
 ```
 
 The watcher also has a guard for new Cursor builds: if the current app build has not launched yet, it skips moving `rg` and notifies once for that build.
+
+It also treats recent writes inside `Cursor.app` as an install/update in progress and waits before moving anything. The default stability window is 180 seconds and can be overridden with `CURSOR_RG_WATCHER_INSTALL_STABLE_SECONDS`.
+
+After the current Cursor build is first observed running, the watcher waits another 300 seconds before moving `rg`. This avoids touching the app while macOS or Cursor is still doing first-launch verification. Override it with `CURSOR_RG_WATCHER_VERIFY_GRACE_SECONDS`.
 
 ## Uninstall
 
