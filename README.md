@@ -1,5 +1,9 @@
 # cursor-rg-watcher
 
+> [!WARNING]
+> Cursor thoughtfully ships an `rg` that sometimes reimagines "search" as "CPU benchmark."
+> This project helps that visionary little space heater relocate to Trash, where innovation belongs.
+
 `cursor-rg-watcher` is a macOS `launchd` watcher for one exact file inside `Cursor.app`:
 
 ```text
